@@ -1,24 +1,28 @@
-# 01 - Pandas, Data Wrangling, and Data Viz
+## 1. Context of the project
 
-In this homework, you will familiarize yourself with *Pandas*, the most popular Python library for handling tabular data. In addition, you will create some basic visualizations. These are among a data scientist's bread and butter -- perfect Homework 1 material!
+In this project, we are going to analyze data from an experiment about honesty. Oftentimes, we are asked to confirm our honest intentions by signing at the end of a document. For example, in tax returns or insurance policy forms, we are often asked to sign our names under a text that reads something like "I hereby certify that the above statements are true and correct to the best of my knowledge."
 
-The homework tasks are described in the `hw1.ipynb` notebook.
+However, when individuals sign after lying in the form, they may not feel the need to correct the falsehoods they have reported. In that context, it could be that signing at the beginning rather than at the end of the document would decrease dishonesty, as those who are filling the form would be aware of the ethical requirements before they provide the information in the form.
 
-For each task, please provide *both* a written explanation of the steps you followed, and the corresponding code. 
-Keep in mind that writing the explanation can help you in two ways:
-1. Clarifying the steps in your mind before writing the actual code
-2. Earning you points if the description is correct, regardless of the potential issues in your code
+This intuition has led researchers to partner up with a motorcycle insurance company to run a randomized experiment. In this insurance company (as well as in many others), customers had to report the exact odometer kilometrage¹ in order for the company to adjust the insurance premiums. Note that motorcycles with lower kilometrage are less likely to have issues, and thus will result in a lower insurance premium². Therefore, customers have an incentive to lie, reporting a kilometrage lower than the real value, in order to save money.
 
-### Submission Guidelines
+In the experiment, two different forms were created: one where the signing was done at the end, and another where the signing was done at the beginning. The insurance company then randomized these forms (i.e., each customer received exactly one form, each with probability 50%) and sent back the data that customers had provided. Some noteworthy details on the experiment are that :
 
-You are expected to solve the homework as a team of *four*, which you specified in the course registration form. By the homework submission deadline, each team should have a single shared private GitHub repo under the *epfl-ada* organization, containing the Jupyter Notebook with the solution. Please, follow the instructions below to create your team repo and start working on the homework:
-1. **One** team member should follow [this link](https://classroom.github.com/a/KDhOxtiq) and create a team with exactly the **same name** as specified in the course registration form. *Note: After creating your team, you might notice `ada-2021-homework-1-<your-personal-GitHub-handle>` instead of `ada-2021-homework-1-<your-team-name>` as the name of the automatically created repo. This is a GitHub classroom bug (or feature), and fixing this is neither in our capacity nor purview. That said, please don't worry, the eventual created repo would be named `ada-2021-homework-1-<your-team-name>`.*
-2. Creation of the team will automatically create a dedicated private repo. At this point the remaining three team-members should follow the [same link](https://classroom.github.com/a/KDhOxtiq) and join their team. *Make sure you are joining the correct team by checking your team-members' GitHub accounts: there might be teams with similar or same names.*
-3. There is no simple automated way to transfer the materials for Homework 1 from the public course repository into your private team repository. To get started, we suggest that you manually pull the homework materials from the course repository to your local machine, copy them into your local team repository, and push to the remote.
-4. Afterwards -- keep collaborating on the homework as a team in your shared private repository.
-5. Most importantly, don’t forget to push the final solved version by **October 22nd, 23:59**!
+*All customers involved in the experiment already had a contract with the company and were simply renewing it. In the data that the company provided, they also report the odometer kilometrage for their previous contract. Each policy, therefore, contains two contracts: the "updated" contract —where the experiment was conducted— and the "baseline" contract, which was the previous contract customers had with the company.
+*A single insurance policy can insure up to 4 distinct motorcycles.
 
-### Deliverables
-1. `hw1.ipynb` notebook with disclosed output for each cell. **Please don't update the `data` folder provided in the repository, i.e., use it in read-only mode.**
+In this project we take the role of the researcher and work analyzing this data!
 
-#### Deadline: October 22nd, 23:59
+
+## 2. Libraries Used
+- `pandas`
+- `numpy`
+- `seaborn`
+- `scipy`
+- `matplotlib`
+
+## 3. Conclusion 
+
+* We show that more than half of the data were created. First, the updated data were made for the difference between the updated and the baseline odometer to fit a uniform distribution from 0 to 50 000. I also think that the baseline data are not all authentic. It seems that they were duplicated : the values are slightly different (on the last three digits) but they both have the same distribution at large scale.
+
+* As for the honesty experiment, it is hard to obtain certain result with tampered in data. The analysis suggests that signing at the top increases dishonesty, yet, given all the concerns raised above, we can't conclude that this is really the case since the data is **not trustworthy**.
