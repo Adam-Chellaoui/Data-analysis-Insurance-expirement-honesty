@@ -8,8 +8,8 @@ This intuition has led researchers to partner up with a motorcycle insurance com
 
 In the experiment, two different forms were created: one where the signing was done at the end, and another where the signing was done at the beginning. The insurance company then randomized these forms (i.e., each customer received exactly one form, each with probability 50%) and sent back the data that customers had provided. Some noteworthy details on the experiment are that :
 
-*All customers involved in the experiment already had a contract with the company and were simply renewing it. In the data that the company provided, they also report the odometer kilometrage for their previous contract. Each policy, therefore, contains two contracts: the "updated" contract —where the experiment was conducted— and the "baseline" contract, which was the previous contract customers had with the company.
-*A single insurance policy can insure up to 4 distinct motorcycles.
+* All customers involved in the experiment already had a contract with the company and were simply renewing it. In the data that the company provided, they also report the odometer kilometrage for their previous contract. Each policy, therefore, contains two contracts: the "updated" contract —where the experiment was conducted— and the "baseline" contract, which was the previous contract customers had with the company.
+* A single insurance policy can insure up to 4 distinct motorcycles.
 
 In this project we take the role of the researcher and work analyzing this data!
 
