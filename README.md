@@ -21,6 +21,7 @@ In this project we take the role of the researcher and work analyzing this data!
 - `scipy`
 - `matplotlib`
 
+
 ## 3. Conclusion 
 
 * We show that more than half of the data were created. First, the updated data were made for the difference between the updated and the baseline odometer to fit a uniform distribution from 0 to 50 000. I also think that the baseline data are not all authentic. It seems that they were duplicated : the values are slightly different (on the last three digits) but they both have the same distribution at large scale.
